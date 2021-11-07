@@ -3,13 +3,13 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 
-const { dropTable } = require('./basics/drop_tables')
+const { noTimeStamps } = require('./basics/timestamps')
 
 app.use(cors())
 // headers config
 app.use(express.json())
 app.options('*', cors()) // enables pre-flight requests before other routes
-dropTable()
+noTimeStamps()
 
 //! indique comment traiter les requetes vers la route /image
 /* app.use('/images', express.static(path.join(__dirname, 'images')))
