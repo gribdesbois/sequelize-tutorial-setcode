@@ -5,7 +5,7 @@ const cors = require('cors')
 
 const { updateRow } = require('./basics/update_row')
 const { findAllRows } = require('./basics/find_all')
-const { getRows } = require('./basics/offset_limit')
+const { getRows } = require('./intermediate/order_by')
 
 app.use(cors())
 // headers config
