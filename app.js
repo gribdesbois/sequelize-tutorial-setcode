@@ -5,12 +5,13 @@ const cors = require('cors')
 
 const { updateRow } = require('./basics/update_row')
 const { findAllRows } = require('./basics/find_all')
+const { getRows } = require('./basics/offset_limit')
 
 app.use(cors())
 // headers config
 app.use(express.json())
 app.options('*', cors()) // enables pre-flight requests before other routes
-findAllRows()
+getRows()
 
 //! indique comment traiter les requetes vers la route /image
 /* app.use('/images', express.static(path.join(__dirname, 'images')))
