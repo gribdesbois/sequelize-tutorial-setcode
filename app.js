@@ -3,15 +3,14 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 
-const { find_By_Id } = require('./basics/find_by_id')
-const { find_one } = require('./basics/find_one')
-const { getOneNote } = require('./basics/find_one2')
+const { updateRow } = require('./basics/update_row')
+const { findAllRows } = require('./basics/find_all')
 
 app.use(cors())
 // headers config
 app.use(express.json())
 app.options('*', cors()) // enables pre-flight requests before other routes
-getOneNote()
+findAllRows()
 
 //! indique comment traiter les requetes vers la route /image
 /* app.use('/images', express.static(path.join(__dirname, 'images')))
