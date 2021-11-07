@@ -3,14 +3,13 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 
-const auth = require('./authenticate')
-const { Dummy } = require('./models/define_model')
+const { dropTable } = require('./basics/drop_tables')
 
 app.use(cors())
 // headers config
 app.use(express.json())
 app.options('*', cors()) // enables pre-flight requests before other routes
-Dummy()
+dropTable()
 
 //! indique comment traiter les requetes vers la route /image
 /* app.use('/images', express.static(path.join(__dirname, 'images')))
