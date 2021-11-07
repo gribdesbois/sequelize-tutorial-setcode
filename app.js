@@ -3,15 +3,13 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 
-const { updateRow } = require('./basics/update_row')
-const { findAllRows } = require('./basics/find_all')
-const { getRows } = require('./intermediate/operator_between')
+const { bidiExample } = require('./associations/bidi_one2one')
 
 app.use(cors())
 // headers config
 app.use(express.json())
 app.options('*', cors()) // enables pre-flight requests before other routes
-getRows()
+bidiExample()
 
 //! indique comment traiter les requetes vers la route /image
 /* app.use('/images', express.static(path.join(__dirname, 'images')))
