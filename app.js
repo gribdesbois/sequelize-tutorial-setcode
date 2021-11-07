@@ -3,13 +3,13 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 
-const { createInBulk } = require('./basics/bulk_create_notes')
+const { find_By_Id } = require('./basics/find_by_id')
 
 app.use(cors())
 // headers config
 app.use(express.json())
 app.options('*', cors()) // enables pre-flight requests before other routes
-createInBulk()
+find_By_Id()
 
 //! indique comment traiter les requetes vers la route /image
 /* app.use('/images', express.static(path.join(__dirname, 'images')))
